@@ -1,48 +1,32 @@
 package com.example.medico.ui.onBoarding
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.example.medico.R
 import com.example.medico.ui.onBoarding.screens.FirstScreen
+import com.example.medico.ui.onBoarding.screens.FourthScreen
 import com.example.medico.ui.onBoarding.screens.SecondScreen
 import com.example.medico.ui.onBoarding.screens.ThirdScreen
+import kotlinx.android.synthetic.main.activity_view_pager.*
 
-
-class ViewPagerFragment : Fragment() {
-
-
+class ViewPagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_view_pager, container, false)
+        setContentView(R.layout.activity_view_pager)
+        supportActionBar?.hide()
 
         val fragmentList = arrayListOf<Fragment>(
             FirstScreen(),
             SecondScreen(),
-            ThirdScreen()
+            ThirdScreen(),
+            FourthScreen()
         )
         val adapter = ViewPagerAdapter(
             fragmentList,
-            requireActivity().supportFragmentManager,
+            this.supportFragmentManager,
             lifecycle
         )
-        view.viewPager.adapter = adapter
-
-        return view
-
+        viewPager.adapter=adapter
     }
-
-
 }

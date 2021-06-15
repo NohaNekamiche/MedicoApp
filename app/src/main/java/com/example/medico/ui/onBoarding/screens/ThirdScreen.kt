@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.example.medico.R
+import kotlinx.android.synthetic.main.fragment_third_screen.view.*
 
 class ThirdScreen : Fragment() {
 
@@ -22,7 +25,14 @@ class ThirdScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third_screen, container, false)
+        val view= inflater.inflate(R.layout.fragment_third_screen, container, false)
+        val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
+
+        view.suivant3.setOnClickListener {
+            viewPager?.currentItem = 3
+        }
+
+        return view
     }
 
 
