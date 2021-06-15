@@ -3,4 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="bienvenue">Bienvenue !</string>
+    <string name="bienvenue_text">medico est la pour vous accompagner durant tout votre processus médical</string>
+    <string name="next">Suivant</string>
+    <string name="s11">Prenez un rendez-vous</string>
+    <string name="s12">Choisissez le médecin que vous souhaitez visiter et introduisez les informations nécessaires  </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
