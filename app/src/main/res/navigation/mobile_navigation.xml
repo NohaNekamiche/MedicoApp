@@ -9,11 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.example.medico.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_navigation_home_to_viewPagerActivity2"
-            app:destination="@id/viewPagerActivity" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -40,5 +36,19 @@
         android:id="@+id/fourthScreen2"
         android:name="com.example.medico.ui.onBoarding.screens.FourthScreen"
         android:label="fragment_fourth_screen"
-        tools:layout="@layout/fragment_fourth_screen" />
+        tools:layout="@layout/fragment_fourth_screen" >
+        <action
+            android:id="@+id/action_fourthScreen2_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.medico.ui.authentification.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpToInclusive="false" />
+    </fragment>
 </navigation>

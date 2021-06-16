@@ -2,8 +2,11 @@
 <resources>
     <color name="green_A4">#3CADA4</color>
     <color name="green_DD">#B8E2DD</color>
+    <color name="green_list">#E2EDEC</color>
     <color name="grey_5A">#515B5A</color>
     <color name="light_grey">#EFEFEF</color>
     <color name="black">#FF000000</color>
+    <color name="red">#D8213E</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey_BC">#BCBCBC</color>
 </resources>

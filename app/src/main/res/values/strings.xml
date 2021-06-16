@@ -16,6 +16,14 @@
     <string name="skip">Skip</string>
     <string name="login_text">Login to your account</string>
     <string name="login">Login</string>
+    <string name="trt">Mes traitements en cours</string>
+    <string name="trt_nom">Traitement :</string>
+    <string name="info_doc">Information sur le médecin :</string>
+    <string name="info_trt">Information sur le traitement :</string>
+    <string name="maladie">Maladie :</string>
+    <string name="Explication">Explication :</string>
+    <string name="date_deb">Date debut :</string>
+    <string name="medicament">Médicaments :</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
