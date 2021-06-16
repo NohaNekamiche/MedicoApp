@@ -8,7 +8,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/treatment_item"
-        android:layout_width="306dp"
+        android:layout_width="400dp"
         android:layout_height="120dp"
         android:layout_marginTop="10dp"
         app:cardBackgroundColor="@color/green_list"
@@ -25,37 +25,39 @@
             android:id="@+id/imageView9"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="13dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="13dp"
             app:srcCompat="@drawable/ic_assignment_24px" />
 
         <TextView
             android:id="@+id/nom_trt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
             android:layout_marginLeft="80dp"
+            android:layout_marginTop="13dp"
+            android:text="TextView"
             android:textColor="@color/grey_5A"
-            android:textSize="17dp"
-            android:text="TextView" />
+            android:textSize="17dp" />
+
         <TextView
             android:id="@+id/nom_doc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="43dp"
-            android:textColor="@color/grey_BC"
             android:layout_marginLeft="80dp"
-            android:textSize="13dp"
-            android:text="TextView" />
+            android:layout_marginTop="43dp"
+            android:text="TextView"
+            android:textColor="@color/grey_BC"
+            android:textSize="13dp" />
+
         <TextView
             android:id="@+id/duree_trt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="43dp"
             android:layout_marginLeft="190dp"
-            android:textSize="12dp"
+            android:layout_marginTop="43dp"
+            android:text="TextView"
             android:textColor="@color/red"
-            android:text="TextView" />
+            android:textSize="12dp" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
