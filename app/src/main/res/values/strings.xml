@@ -13,6 +13,7 @@
     <string name="s31">Demandez un conseil</string>
     <string name="s32"> Besoins d’un conseil médical ?medico vous permet de demander un conseil auprès de votre médecin</string>
     <string name="cnx">Connexion</string>
+    <string name="skip">Skip</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

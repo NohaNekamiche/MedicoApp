@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.medico.MainActivity
 import com.example.medico.R
 import kotlinx.android.synthetic.main.activity_view_pager.*
+import kotlinx.android.synthetic.main.fragment_fourth_screen.*
 import kotlinx.android.synthetic.main.fragment_fourth_screen.view.*
 
 
@@ -31,9 +32,12 @@ class FourthScreen : Fragment() {
         // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_fourth_screen, container, false)
         view.finish.setOnClickListener {
-            viewPager?.currentItem = 3
-            val intent = Intent(context, MainActivity::class.java)
-            startActivity(intent)
+            viewPager?.currentItem = 4
+
+            val intent = Intent(requireActivity(), MainActivity::class.java)
+            requireActivity().startActivity(intent)
+            requireActivity().finish()
+            onBoardingFinished()
 
         }
 
@@ -43,7 +47,10 @@ class FourthScreen : Fragment() {
     private fun onBoardingFinished(){
         val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
-        editor.putBoolean("Finished", true)
-        editor.apply()
+
+            editor.putBoolean("Finished", true)
+
+            editor.apply()
+
     }
 }

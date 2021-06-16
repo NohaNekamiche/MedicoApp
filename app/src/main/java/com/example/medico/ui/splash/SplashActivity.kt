@@ -19,16 +19,18 @@ class SplashActivity : AppCompatActivity() {
             if (onBoardingFinished()) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+                finish()
             } else {
                 val intent = Intent(this, ViewPagerActivity::class.java)
                 startActivity(intent)
+                finish()
             }
         }, 3000)
     }
 
     private fun onBoardingFinished(): Boolean {
         val sharedPref =
-            this@SplashActivity.getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+            this.getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
         return sharedPref.getBoolean("Finished", false)
     }
 }
