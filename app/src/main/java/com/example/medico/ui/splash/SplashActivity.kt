@@ -7,6 +7,7 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.example.medico.MainActivity
 import com.example.medico.R
+import com.example.medico.ui.authentification.LoginActivity
 import com.example.medico.ui.onBoarding.ViewPagerActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -17,7 +18,7 @@ class SplashActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             if (onBoardingFinished()) {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

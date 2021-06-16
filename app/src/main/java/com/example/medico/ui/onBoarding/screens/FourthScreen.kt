@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.medico.MainActivity
 import com.example.medico.R
+import com.example.medico.ui.authentification.LoginActivity
 import kotlinx.android.synthetic.main.activity_view_pager.*
 import kotlinx.android.synthetic.main.fragment_fourth_screen.*
 import kotlinx.android.synthetic.main.fragment_fourth_screen.view.*
@@ -34,7 +35,7 @@ class FourthScreen : Fragment() {
         view.finish.setOnClickListener {
             viewPager?.currentItem = 4
 
-            val intent = Intent(requireActivity(), MainActivity::class.java)
+            val intent = Intent(requireActivity(), LoginActivity::class.java)
             requireActivity().startActivity(intent)
             requireActivity().finish()
             onBoardingFinished()

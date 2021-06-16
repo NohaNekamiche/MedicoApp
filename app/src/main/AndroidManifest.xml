@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Medico">
+        <activity android:name=".ui.authentification.LoginActivity"></activity>
         <activity android:name=".ui.onBoarding.ViewPagerActivity"></activity>
         <activity android:name=".MainActivity" />
         <activity
