@@ -33,7 +33,6 @@ class FourthScreen : Fragment() {
         // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_fourth_screen, container, false)
         view.finish.setOnClickListener {
-            viewPager?.currentItem = 4
 
             val intent = Intent(requireActivity(), LoginActivity::class.java)
             requireActivity().startActivity(intent)

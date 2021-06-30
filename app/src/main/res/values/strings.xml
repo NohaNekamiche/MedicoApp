@@ -8,7 +8,7 @@
     <string name="next">Suivant</string>
     <string name="s11">Prenez un rendez-vous</string>
     <string name="s12">Choisissez le médecin que vous souhaitez visiter et introduisez les informations nécessaires  </string>
-    <string name="s21">Consultez vos traitements en cours </string>
+    <string name="s21">Consultez vos traitements</string>
     <string name="s22">Tout vos traitement en cours sont sauvegardés pour vous que vous puissiez les consulter a tout moment</string>
     <string name="s31">Demandez un conseil</string>
     <string name="s32"> Besoins d’un conseil médical ?medico vous permet de demander un conseil auprès de votre médecin</string>
@@ -24,6 +24,8 @@
     <string name="Explication">Explication :</string>
     <string name="date_deb">Date debut :</string>
     <string name="medicament">Médicaments :</string>
+    <string name="secon">Se Connecter</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

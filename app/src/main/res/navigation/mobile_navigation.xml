@@ -29,7 +29,7 @@
         tools:layout="@layout/activity_splash" />
     <activity
         android:id="@+id/viewPagerActivity"
-        android:name="com.example.medico.ui.onBoarding.ViewPagerActivity"
+        android:name="com.example.medico.ui.onBoarding.OnBoardingActivity"
         android:label="activity_view_pager"
         tools:layout="@layout/activity_view_pager" />
     <fragment

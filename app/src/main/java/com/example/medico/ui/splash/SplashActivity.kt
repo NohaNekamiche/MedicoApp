@@ -5,10 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import com.example.medico.MainActivity
 import com.example.medico.R
 import com.example.medico.ui.authentification.LoginActivity
-import com.example.medico.ui.onBoarding.ViewPagerActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,21 +15,13 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         Handler().postDelayed({
-            if (onBoardingFinished()) {
-                val intent = Intent(this, LoginActivity::class.java)
+
+                val intent = Intent(this, WelcomeActivity::class.java)
                 startActivity(intent)
-                finish()
-            } else {
-                val intent = Intent(this, ViewPagerActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
+
+
         }, 3000)
     }
 
-    private fun onBoardingFinished(): Boolean {
-        val sharedPref =
-            this.getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
-        return sharedPref.getBoolean("Finished", false)
-    }
+
 }
