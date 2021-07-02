@@ -3,4 +3,43 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="doc">Dr Noha Nekamiche</string>
+    <string name="number">0555466678</string>
+    <string name="loc">Medea,Alger</string>
+    <string name="spe">Specialité :</string>
+    <string name="spe_ex">Cardiologie</string>
+    <string name="dent">Dentaire</string>
+    <string name="neuro">Neurologie</string>
+    <string name="pediatre">Pédiatrie</string>
+    <string name="cardio">Cardiologie</string>
+    <string name="ophtal">Ophtalmologie</string>
+    <string name="generaliste">Généraliste</string>
+    <string name="qr_code">Pas de code QR?</string>
+    <string name="generer">Régénérer</string>
+    <string name="info">Voici votre code QR généré pour votre rendez-vous </string>
+    <string name="save">Sauvegarder</string>
+    <string name="remarque">Remarque importante !</string>
+    <string name="remarque_details">Veuillez montrer ce code QR le jour du rendez-vous pour votre médecin</string>
+    <string name="with">Avec</string>
+    <string name="date">Date</string>
+    <string name="heure">Heure</string>
+    <string name="title_qr">Voici votre Code QR</string>
+    <string name="rdv">Détail du rendez-vous</string>
+    <string name="doc_info">Information sur le médecin</string>
+    <string name="select_date">Sélectionner une date</string>
+    <string name="select_heure">Sélectionner une heure</string>
+    <string name="select_jr">Choisir un jour</string>
+    <string name="select_mois">Choisir un mois</string>
+    <string name="confirm">Confirmer</string>
+    <string name="demande">Demander un conseil</string>
+    <string name="send">Envoyer</string>
+    <string name="msg">Message...</string>
+    <string name="obj">Objet</string>
+    <string name="consiel">Conseil Covid19</string>
+    <string name="ouvrir">Ouvrir</string>
+    <string name="rep">Réponses aux demandes</string>
+    <string name="mes_rdv">Mes rendez-vous </string>
+    <string name="rdv_title">RDV-Généraliste</string>
+
+
 </resources>
