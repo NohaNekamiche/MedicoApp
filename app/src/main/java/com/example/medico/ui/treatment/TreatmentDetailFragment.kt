@@ -28,22 +28,8 @@ class TreatmentDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        /*  doc_phone.setOnClickListener {
-            val uri = Uri.parse("tel:" +doc_phone)
-            val intent = Intent(Intent.ACTION_CALL, uri)
 
-            /*  if (intent.resolveActivity(context.packageManager) != null) {
-                requireActivity().startActivity(intent)
-            }*/
-        }
-
-          val lat=data[position].lat
-            val lang=data[position].lang
-         doc_pos.setOnClickListener{ view->
-                val url=Uri.parse("geo:$lat,$lang")
-                val intent= Intent(Intent.ACTION_VIEW,url)
-                context.startActivity(intent)
-            }*/          return inflater.inflate(R.layout.fragment_treatment_detail, container, false)
+        return inflater.inflate(R.layout.fragment_treatment_detail, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -54,7 +40,24 @@ class TreatmentDetailFragment : Fragment() {
         val medicaments = arguments?.getString("medicaments").toString()
         val date = arguments?.getString("date").toString()
         val idDoc = arguments?.getInt("idDoc")
+        val lat= arguments?.getString("lat").toString()
+        val lang= arguments?.getString("lang").toString()
 
+      doc_phone.setOnClickListener {
+        val uri = Uri.parse("tel:0553322126")
+        val intent = Intent(Intent.ACTION_CALL, uri)
+
+       if (context?.packageManager?.let { it1 -> intent.resolveActivity(it1) } != null) {
+            requireActivity().startActivity(intent)
+        }
+    }
+
+
+     doc_pos.setOnClickListener{ view->
+            val url=Uri.parse("geo:36.7598942,3.0120671")
+            val intent= Intent(Intent.ACTION_VIEW,url)
+         context?.startActivity(intent)
+        }
         Log.d("titre", titre)
         nom_trt.text=titre
         explicationtxt.text=explication

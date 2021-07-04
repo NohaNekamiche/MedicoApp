@@ -36,7 +36,6 @@ class TreatmentAdapter (val context: Context, var data:MutableList<TraitementRes
             val date= data[position].date
             val idDoc = data[position].idDoc
             Toast.makeText(context,medicaments,Toast.LENGTH_SHORT).show()
-
             val bundle = bundleOf("titre" to titre,"explication" to explication, "medicaments" to medicaments , "date" to date, "idDoc" to idDoc)
             v.findNavController().navigate(R.id.action_navigation_treatment_to_treatmentDetailFragment,bundle)
         }
