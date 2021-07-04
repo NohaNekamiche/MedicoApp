@@ -9,9 +9,10 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medico.R
+import com.example.medico.dataClass.TraitementResponse
 import com.example.medico.dataClass.Treatment
 
-class TreatmentAdapter (val context: Context, var data:List<Treatment>): RecyclerView.Adapter<Holder>() {
+class TreatmentAdapter (val context: Context, var data:MutableList<TraitementResponse>): RecyclerView.Adapter<Holder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         return Holder(LayoutInflater.from(context).inflate(R.layout.treatment_item, parent, false))
     }
