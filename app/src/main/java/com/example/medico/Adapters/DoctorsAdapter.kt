@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.medico.dataClass.Doctor
 import com.example.medico.R
 
+
 class DoctorsAdapter(val context: Context, var data:List<Doctor>): RecyclerView.Adapter<MyDocHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyDocHolder {
         return MyDocHolder(LayoutInflater.from(context).inflate(R.layout.item_doctor, parent, false))
@@ -33,10 +34,25 @@ class DoctorsAdapter(val context: Context, var data:List<Doctor>): RecyclerView.
             context.startActivity(intent)
         }
         holder.item.setOnClickListener { v->
-            val doc=data[position].name+data[position].username
+            val doc="Dr "+data[position].name+" "+data[position].username
             val adr=data[position].adr
-            val bundle= bundleOf("docname" to doc,"adress" to adr)
+            val tel=data[position].phone
+            val bundle= bundleOf("docname" to doc,"adress" to adr,"tel" to tel)
             v?.findNavController()?.navigate(R.id.nav_to_docdetail,bundle)
+        }
+        holder.phone_txt.setOnClickListener {
+            val uri = Uri.parse("tel:" +data[position].phone)
+            val dialIntent = Intent(Intent.ACTION_DIAL)
+
+            dialIntent.data = uri
+            context.startActivity(dialIntent)
+        }
+        holder.phone_img.setOnClickListener {
+            val uri = Uri.parse("tel:" +data[position].phone)
+            val dialIntent = Intent(Intent.ACTION_DIAL)
+
+            dialIntent.data = uri
+            context.startActivity(dialIntent)
         }
 
 
@@ -51,6 +67,8 @@ class MyDocHolder(view: View) : RecyclerView.ViewHolder(view) {
     val lieu= view.findViewById<TextView>(R.id.lieu)
     val location=view.findViewById<ImageView>(R.id.location)
     val item=view .findViewById<CardView>(R.id.item_doc)
+    val  phone_txt=view.findViewById<TextView>(R.id.phone_num)
+    val phone_img=view.findViewById<ImageView>(R.id.phone)
 
 
 
