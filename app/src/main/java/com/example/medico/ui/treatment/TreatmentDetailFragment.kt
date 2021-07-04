@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation.findNavController
 import com.example.medico.R
 import kotlinx.android.synthetic.main.fragment_treatment_detail.*
 
@@ -51,18 +52,18 @@ class TreatmentDetailFragment : Fragment() {
         val titre = arguments?.getString("titre").toString()
         val explication = arguments?.getString("explication").toString()
         val medicaments = arguments?.getString("medicaments").toString()
-        val datedebut = arguments?.getString("datebut").toString()
+        val date = arguments?.getString("date").toString()
         val idDoc = arguments?.getInt("idDoc")
 
         Log.d("titre", titre)
         nom_trt.text=titre
         explicationtxt.text=explication
-        datedebuttxt.text=datedebut
+        datedebuttxt.text=date
         medicamentstxt.text=medicaments
-        // Inflate the layout for this fragment
 
 
     }
+
 
 
 

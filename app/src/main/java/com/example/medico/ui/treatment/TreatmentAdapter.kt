@@ -32,11 +32,12 @@ class TreatmentAdapter (val context: Context, var data:MutableList<TraitementRes
             v->
             val titre = data[position].Titre
             val explication=data[position].explication
-            val medicaments= data[position].medicament
-            val datedebut= data[position].date
+            val medicaments= data[position].medicaments
+            val date= data[position].date
             val idDoc = data[position].idDoc
-            Toast.makeText(context,titre,Toast.LENGTH_SHORT).show()
-            val bundle = bundleOf("titre" to titre,"explication" to explication, "medicaments" to medicaments , "datedebut" to datedebut, "idDoc" to idDoc)
+            Toast.makeText(context,medicaments,Toast.LENGTH_SHORT).show()
+
+            val bundle = bundleOf("titre" to titre,"explication" to explication, "medicaments" to medicaments , "date" to date, "idDoc" to idDoc)
             v.findNavController().navigate(R.id.action_navigation_treatment_to_treatmentDetailFragment,bundle)
         }
 

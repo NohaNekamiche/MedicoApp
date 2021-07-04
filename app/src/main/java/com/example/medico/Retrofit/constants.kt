@@ -1,3 +1,3 @@
 package com.example.medico.Retrofit
 
-val baseUrl="https://324ba87ace45.ngrok.io/"
+val baseUrl="http://10.0.2.2:3000/"

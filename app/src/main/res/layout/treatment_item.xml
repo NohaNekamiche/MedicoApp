@@ -8,16 +8,16 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/treatment_item"
-        android:layout_width="400dp"
+        android:layout_width="380dp"
         android:layout_height="120dp"
         app:cardBackgroundColor="@color/green_list"
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
-        app:cardMaxElevation="12dp"
+        app:cardMaxElevation="5dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
