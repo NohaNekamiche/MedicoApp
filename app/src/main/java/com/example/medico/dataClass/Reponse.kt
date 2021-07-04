@@ -1,4 +1,4 @@
-package com.example.medico.DataClass
+package com.example.medico.dataClass
 
 class Reponse (
     val rep:String,

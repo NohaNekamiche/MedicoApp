@@ -1,4 +1,4 @@
-package com.example.medico.DataClass
+package com.example.medico.dataClass
 
 class Conseil ( val date:String,
                 val heure:String,

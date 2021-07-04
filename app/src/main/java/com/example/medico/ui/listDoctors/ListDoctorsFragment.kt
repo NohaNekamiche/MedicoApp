@@ -1,19 +1,23 @@
-package com.example.medico.ui.listcars
+package com.example.medico.ui.listDoctors
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.medico.Adapters.DoctorsAdapter
-import com.example.medico.Adapters.MyDocHolder
-import com.example.medico.DataClass.Doctor
+import com.example.medico.dataClass.Doctor
 import com.example.medico.R
+import com.example.medico.Retrofit.RetrofitService
 import kotlinx.android.synthetic.main.fragment_list_doctors.*
+
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ListDoctorsFragment : Fragment() {
 
@@ -31,10 +35,14 @@ class ListDoctorsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        list_docs.layoutManager = LinearLayoutManager(requireActivity())
-            list_docs.adapter = DoctorsAdapter(requireActivity(),loadData())
+        //list_docs.layoutManager = LinearLayoutManager(requireActivity())
+          //  list_docs.adapter = DoctorsAdapter(requireActivity(),loadData())
+        val spec=arguments?.getString("spec")
+        if (spec != null) {
+            getDoctorsByspeciality(spec)
+        }
     }
-
+/*
     fun loadData():List<Doctor>{
         val data = mutableListOf<Doctor>()
         val doctor1=Doctor("Dentiste",1,R.drawable.doc1,"15","36","Nekamiche","Noha",
@@ -57,5 +65,33 @@ class ListDoctorsFragment : Fragment() {
         data.add(doctor6)
 
         return data
+    }*/
+
+    private  fun getDoctorsByspeciality(spec:String){
+        val call=RetrofitService.docBySpecialityApi.getDocListBySpeciality(spec)
+        call.enqueue(object :Callback<MutableList<Doctor>>{
+            override fun onFailure(call: Call<MutableList<Doctor>>, t: Throwable) {
+              Toast.makeText(context,"can't get doctors",Toast.LENGTH_LONG).show()
+                Log.d("error",t.toString())
+            }
+
+            override fun onResponse(
+                call: Call<MutableList<Doctor>>,
+                response: Response<MutableList<Doctor>>
+            ) {
+                if(response.isSuccessful){
+                    val data=response.body()
+                    Log.d("doc",response.body().toString())
+                    Log.d("doc",response.code().toString())
+                    list_docs.also {
+                        list_docs.layoutManager=LinearLayoutManager(requireContext())
+                        list_docs.adapter=list_docs?.let {
+                            data?.let { it1 -> DoctorsAdapter(requireActivity(), it1) }
+                        }
+                    }
+                }
+            }
+
+        })
     }
 }
