@@ -51,7 +51,7 @@ class TreatmentDetailFragment : Fragment() {
         val titre = arguments?.getString("titre").toString()
         val explication = arguments?.getString("explication").toString()
         val medicaments = arguments?.getString("medicaments").toString()
-        val datedebut = arguments?.getString("dateebut").toString()
+        val datedebut = arguments?.getString("datebut").toString()
         val idDoc = arguments?.getInt("idDoc")
 
         Log.d("titre", titre)

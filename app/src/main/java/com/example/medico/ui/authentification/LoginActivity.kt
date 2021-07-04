@@ -27,12 +27,25 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
 
+        val prefs = getSharedPreferences("prefs", Context.MODE_PRIVATE)
+        val editor = prefs.edit()
+        println("first run")
+        editor.putBoolean("FirstRun", false)
+        editor.apply()
+
 
 
         login.setOnClickListener {
 
             val phone = phone.text.toString()
             val pwd = pwd.text.toString()
+            if (phone.isEmpty()){
+                Toast.makeText(applicationContext,"Veuillez entrer votre numéro de téléphone",Toast.LENGTH_SHORT).show()
+
+            }else if (pwd.isEmpty()){
+                Toast.makeText(applicationContext,"Veuillez entrer votre mot de passe",Toast.LENGTH_SHORT).show()
+
+            }
             Toast.makeText(applicationContext,"phone : $phone",Toast.LENGTH_SHORT).show()
 
             val auth = Auth(phone, pwd)
@@ -60,10 +73,11 @@ class LoginActivity : AppCompatActivity() {
                     Log.d("push",response.code().toString())
                     Log.d("push",response.body().toString())
                     Log.d("the token ", response.body()?.token.toString())
-
                     val token = response.body()?.token
                     if (token != null) {
                         startActivity(Intent(this@LoginActivity,MainActivity::class.java))
+                        val preferences: SharedPreferences = getSharedPreferences("LoggedIn", Context.MODE_PRIVATE)
+                        preferences.edit().putBoolean("LoggedIn", true).apply()
                         saveUserToken(token)
                     }
 
