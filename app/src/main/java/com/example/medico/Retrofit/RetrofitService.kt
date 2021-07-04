@@ -22,4 +22,5 @@ object RetrofitService {
         build().
         create(TreatmentApi::class.java)
     }
+
 }

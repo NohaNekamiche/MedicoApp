@@ -96,7 +96,7 @@
         android:text="@string/Explication"
         android:textColor="@color/green_A4"
         android:textSize="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView15"
+        app:layout_constraintEnd_toStartOf="@+id/explication"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
@@ -126,7 +126,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/datedebuttxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="192dp"
@@ -137,7 +137,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/medicamentstxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -148,7 +148,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/explicationtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="192dp"

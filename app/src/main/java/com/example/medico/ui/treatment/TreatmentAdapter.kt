@@ -6,7 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medico.R
 import com.example.medico.dataClass.TraitementResponse
@@ -23,9 +26,18 @@ class TreatmentAdapter (val context: Context, var data:MutableList<TraitementRes
         holder.nom_doc.text=data[position].nom_doc
         holder.duree_trt.text=data[position].dateFinTraitement
 
+
         val idCardView=holder.cv
         idCardView.setOnClickListener{
-            //afficher detail traitement
+            v->
+            val titre = data[position].Titre
+            val explication=data[position].explication
+            val medicaments= data[position].medicament
+            val datedebut= data[position].date
+            val idDoc = data[position].idDoc
+            Toast.makeText(context,titre,Toast.LENGTH_SHORT).show()
+            val bundle = bundleOf("titre" to titre,"explication" to explication, "medicaments" to medicaments , "datedebut" to datedebut, "idDoc" to idDoc)
+            v.findNavController().navigate(R.id.action_navigation_treatment_to_treatmentDetailFragment,bundle)
         }
 
     }

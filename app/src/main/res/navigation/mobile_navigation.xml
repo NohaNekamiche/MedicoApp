@@ -27,6 +27,15 @@
         android:id="@+id/navigation_treatment"
         android:name="com.example.medico.ui.treatment.TreatmentFragment"
         android:label="fragment_treatment"
-        tools:layout="@layout/fragment_treatment" />
+        tools:layout="@layout/fragment_treatment" >
+        <action
+            android:id="@+id/action_navigation_treatment_to_treatmentDetailFragment"
+            app:destination="@id/treatmentDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/treatmentDetailFragment"
+        android:name="com.example.medico.ui.treatment.TreatmentDetailFragment"
+        android:label="fragment_treatment_detail"
+        tools:layout="@layout/fragment_treatment_detail" />
 
 </navigation>
