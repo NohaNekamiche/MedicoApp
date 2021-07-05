@@ -7,17 +7,19 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_baseline_event_available_24"
-        android:title="@string/title_dashboard" />
+        android:id="@+id/navigation_treatment"
+        android:icon="@drawable/ic_round_content_paste_24"
+        android:title="traitements" />
 
     <item
+
         android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_round_content_paste_24"
-        android:title="@string/title_notifications" />
+        android:icon="@drawable/ic_baseline_event_available_24"
+        android:title="rendez-vous" />
     <item
         android:id="@+id/navigation_aide"
         android:icon="@drawable/ic_baseline_forum_24"
-        android:title="@string/title_notifications" />
+
+        android:title="Conseils" />
 
 </menu>

@@ -16,17 +16,46 @@
             />
     </fragment>
     <fragment
+        android:id="@+id/docdetail"
+        android:name="com.example.medico.ui.DoctorDetails.DoctorDetailFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_rdv_info" >
+        <action
+            android:id="@+id/nav_to_qrcode"
+            app:destination="@+id/qrcode"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/qrcode"
+        android:name="com.example.medico.ui.QRcode.QRcodeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_rdv_qrcode" >
+    </fragment>
+    <fragment
         android:id="@+id/list_doc"
-        android:name="com.example.medico.ui.listcars.ListDoctorsFragment"
+        android:name="com.example.medico.ui.listDoctors.ListDoctorsFragment"
         tools:layout="@layout/fragment_list_doctors">
-
+        <action
+            android:id="@+id/nav_to_docdetail"
+            app:destination="@+id/docdetail"
+            />
     </fragment>
 
+
+<fragment
+        android:id="@+id/navigation_treatment"
+        android:name="com.example.medico.ui.treatment.TreatmentFragment"
+        android:label="fragment_treatment"
+        tools:layout="@layout/fragment_treatment" >
+        <action
+            android:id="@+id/action_navigation_treatment_to_treatmentDetailFragment"
+            app:destination="@id/treatmentDetailFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.medico.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/treatmentDetailFragment"
+        android:name="com.example.medico.ui.treatment.TreatmentDetailFragment"
+        android:label="fragment_treatment_detail"
+        tools:layout="@layout/fragment_treatment_detail" />
 
     <fragment
         android:id="@+id/navigation_notifications"
@@ -39,4 +68,6 @@
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications"
         />
+
+
 </navigation>

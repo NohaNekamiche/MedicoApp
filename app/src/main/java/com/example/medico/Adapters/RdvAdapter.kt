@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.medico.DataClass.Doctor
-import com.example.medico.DataClass.Rdv
+import com.example.medico.dataClass.Rdv
 import com.example.medico.R
 
 class RdvAdapter (val context: Context, var data:List<Rdv>): RecyclerView.Adapter<MyRdvHolder>() {

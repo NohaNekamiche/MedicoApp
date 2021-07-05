@@ -3,6 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
     <string name="doc">Dr Noha Nekamiche</string>
     <string name="number">0555466678</string>
     <string name="loc">Medea,Alger</string>
@@ -41,5 +42,39 @@
     <string name="mes_rdv">Mes rendez-vous </string>
     <string name="rdv_title">RDV-Généraliste</string>
 
+
+
+    <string name="bienvenue">Bienvenue !</string>
+    <string name="bienvenue_text">medico est la pour vous accompagner durant tout votre processus médical</string>
+    <string name="next">Suivant</string>
+    <string name="s11">Prenez un rendez-vous</string>
+    <string name="s12">Choisissez le médecin que vous souhaitez visiter et introduisez les informations nécessaires  </string>
+    <string name="s21">Consultez vos traitements</string>
+    <string name="s22">Tout vos traitement en cours sont sauvegardés pour vous que vous puissiez les consulter a tout moment</string>
+    <string name="s31">Demandez un conseil</string>
+    <string name="s32"> Besoins d’un conseil médical ?medico vous permet de demander un conseil auprès de votre médecin</string>
+    <string name="cnx">Connexion</string>
+    <string name="skip">Skip</string>
+    <string name="login_text">Login to your account</string>
+    <string name="login">Login</string>
+    <string name="trt">Mes traitements en cours</string>
+    <string name="trt_nom">Traitement :</string>
+    <string name="info_doc">Information sur le médecin :</string>
+    <string name="info_trt">Information sur le traitement :</string>
+    <string name="maladie">Maladie :</string>
+    <string name="Explication">Explication :</string>
+    <string name="date_deb">Date debut :</string>
+    <string name="medicament">Médicaments :</string>
+    <string name="secon">Se Connecter</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 
 </resources>

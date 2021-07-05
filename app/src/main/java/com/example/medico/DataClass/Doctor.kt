@@ -1,13 +1,16 @@
-package com.example.medico.DataClass
+package com.example.medico.dataClass
 
 data class Doctor(
+        val idDoc:Int,
         val specialite:String,
         val idUser:Int,
-        val photo: Int,
+        val photo: String,
         val latCabinet:String,
         val langCabinet:String,
-        val nom:String,
-        val prenom:String,
+        val name:String,
+        val username:String,
         val phone:String,
-        val lieu:String
+        val adr:String,
+        val Role:String,
+        val pwd:String
 )

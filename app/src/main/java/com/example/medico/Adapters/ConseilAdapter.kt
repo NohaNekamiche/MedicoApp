@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.medico.DataClass.Conseil
-import com.example.medico.DataClass.Doctor
+import com.example.medico.dataClass.Conseil
 import com.example.medico.R
 
 class ConseilAdapter(val context: Context, var data:List<Conseil>): RecyclerView.Adapter<MyConseilHolder>() {

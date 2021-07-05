@@ -1,11 +1,10 @@
-package com.example.medico.ui.listcars
+package com.example.medico.ui.QRcode
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ListDoctorsViewModel : ViewModel() {
-
+class QRcodeViewModel :ViewModel(){
     private val _text = MutableLiveData<String>().apply {
         value = "This is home Fragment"
     }
