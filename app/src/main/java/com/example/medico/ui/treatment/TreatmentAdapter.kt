@@ -11,7 +11,9 @@ import androidx.cardview.widget.CardView
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.medico.R
+import com.example.medico.Retrofit.baseUrl
 import com.example.medico.dataClass.TraitementResponse
 import com.example.medico.dataClass.Treatment
 
@@ -24,7 +26,7 @@ class TreatmentAdapter (val context: Context, var data:MutableList<TraitementRes
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.nom_trt.text=data[position].maladie
         holder.nom_doc.text=data[position].nom_doc
-        holder.duree_trt.text=data[position].dateFinTraitement
+        holder.duree_trt.text=data[position].dateFinTraitement.subSequence(0,10)
 
 
         val idCardView=holder.cv
@@ -35,6 +37,8 @@ class TreatmentAdapter (val context: Context, var data:MutableList<TraitementRes
             val medicaments= data[position].medicaments
             val date= data[position].date
             val idDoc = data[position].idDoc
+           // Glide.with(context).load(baseUrl +data[position].img).into(holder.img)
+
             Toast.makeText(context,medicaments,Toast.LENGTH_SHORT).show()
             val bundle = bundleOf("titre" to titre,"explication" to explication, "medicaments" to medicaments , "date" to date, "idDoc" to idDoc)
             v.findNavController().navigate(R.id.action_navigation_treatment_to_treatmentDetailFragment,bundle)

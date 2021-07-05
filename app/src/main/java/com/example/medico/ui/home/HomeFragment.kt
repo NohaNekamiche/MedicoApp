@@ -1,5 +1,8 @@
 package com.example.medico.ui.home
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +18,7 @@ import com.example.medico.StockageLocal.Entity.Doctors
 import com.example.medico.StockageLocal.Entity.Traitement
 import com.example.medico.StockageLocal.Entity.Users
 import com.example.medico.StockageLocal.RoomService
+import com.example.medico.ui.authentification.LoginActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.sql.Timestamp
 import java.text.SimpleDateFormat
@@ -41,7 +45,7 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        RoomService.context=this.requireContext()
+      /*  RoomService.context=this.requireContext()
 
         val usr=Users("lamia","lamia","lamia","lamia","lamia",1)
         RoomService.appDatabase.getUserDao().addDoctor(usr)
@@ -76,6 +80,24 @@ class HomeFragment : Fragment() {
                 i++
 
             }
+
+        }*/
+
+        button.setOnClickListener {
+            val preferences: SharedPreferences = requireActivity().getSharedPreferences("LoggedIn", Context.MODE_PRIVATE)
+
+            preferences.edit().putBoolean("LoggedIn", false).apply()
+            var toMain = Intent(requireContext(), LoginActivity::class.java)
+            val loggedIn = preferences?.getBoolean("LoggedIn",false)
+                if(!loggedIn){
+                    requireActivity().startActivity(toMain)
+                    requireActivity().finish()
+
+                }else {
+
+                    Toast.makeText(context,"Veuillez réessayer",Toast.LENGTH_SHORT).show()
+
+                }
 
         }
 

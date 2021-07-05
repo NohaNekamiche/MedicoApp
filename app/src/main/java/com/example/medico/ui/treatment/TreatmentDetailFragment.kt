@@ -38,7 +38,7 @@ class TreatmentDetailFragment : Fragment() {
         val titre = arguments?.getString("titre").toString()
         val explication = arguments?.getString("explication").toString()
         val medicaments = arguments?.getString("medicaments").toString()
-        val date = arguments?.getString("date").toString()
+        val date = arguments?.getString("date")?.subSequence(0,10)
         val idDoc = arguments?.getInt("idDoc")
         val lat= arguments?.getString("lat").toString()
         val lang= arguments?.getString("lang").toString()
