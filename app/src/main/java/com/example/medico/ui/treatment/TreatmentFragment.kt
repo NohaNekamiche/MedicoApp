@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.fragment_treatment.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.sql.Timestamp
 
 
 class TreatmentFragment : Fragment() {
@@ -40,8 +41,10 @@ class TreatmentFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         val preferences: SharedPreferences = requireActivity().getSharedPreferences("MY_APP", Context.MODE_PRIVATE)
         val idPatient=preferences.getInt("IDUSER",0)
+        val current=System.currentTimeMillis().let { Timestamp(it) }
+
         println("id patient"+idPatient)
-        val call = RetrofitService.treatmentApi.getTraitementByUser(idPatient )
+        val call = RetrofitService.treatmentApi.getTraitementByCurrentDate(idPatient,current)
         call.enqueue(object: Callback<MutableList<TraitementResponse>> {
             override fun onFailure(call: Call<MutableList<TraitementResponse>>, t: Throwable) {
                 Toast.makeText(context,"Cant get treatments",Toast.LENGTH_SHORT).show()

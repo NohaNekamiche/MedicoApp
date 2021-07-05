@@ -16,6 +16,7 @@ import com.example.medico.StockageLocal.Entity.Traitement
 import com.example.medico.StockageLocal.Entity.Users
 import com.example.medico.StockageLocal.RoomService
 import kotlinx.android.synthetic.main.fragment_home.*
+import java.sql.Timestamp
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -59,7 +60,9 @@ class HomeFragment : Fragment() {
         button.setOnClickListener { view ->
             val all = RoomService.appDatabase.getTreatmentDao().getAllTreatment()
 
-            val currentdate=System.currentTimeMillis().let { Date(it) }
+            val currentdate=System.currentTimeMillis().let { Timestamp(it) }
+
+
             println("cuurent"+currentdate)
             val result =RoomService.appDatabase.getTreatmentDao().getCurrentTreatment(currentdate)
 
