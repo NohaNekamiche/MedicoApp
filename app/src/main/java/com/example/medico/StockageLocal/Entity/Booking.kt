@@ -21,7 +21,7 @@ data class Booking(
     var idPatient:Int,
     var jour:String,
     var mois:String,
-    var heure: Date,
+    var heure: String,
     var titre:String
 )
 {

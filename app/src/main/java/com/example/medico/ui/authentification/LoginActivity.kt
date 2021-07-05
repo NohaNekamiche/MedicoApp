@@ -74,11 +74,16 @@ class LoginActivity : AppCompatActivity() {
                     Log.d("push",response.body().toString())
                     Log.d("the token ", response.body()?.token.toString())
                     val token = response.body()?.token
-                    if (token != null) {
+                    val idUser=response.body()?.idUser
+                    println("IDUSER "+idUser)
+                    if ((token != null)&&(idUser!=null)) {
                         startActivity(Intent(this@LoginActivity,MainActivity::class.java))
                         val preferences: SharedPreferences = getSharedPreferences("LoggedIn", Context.MODE_PRIVATE)
                         preferences.edit().putBoolean("LoggedIn", true).apply()
-                        saveUserToken(token)
+                        saveUserToken(token,idUser)
+                    } else {
+                        Toast.makeText(applicationContext,"Erreur s'est produite, veuillez réessayer",Toast.LENGTH_SHORT).show()
+
                     }
 
                 }
@@ -87,9 +92,10 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    private fun saveUserToken(token: String){
+    private fun saveUserToken(token: String,idUser:Int){
         val preferences: SharedPreferences = getSharedPreferences("MY_APP", Context.MODE_PRIVATE)
         preferences.edit().putString("TOKEN", token).apply()
+        preferences.edit().putInt("IDUSER", idUser).apply()
         /// Retrive Saved TOKEN
         //val retrivedToken = preferences.getString("TOKEN", null) //second parameter default value.
     }

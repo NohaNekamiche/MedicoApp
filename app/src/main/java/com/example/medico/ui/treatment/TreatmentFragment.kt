@@ -1,5 +1,7 @@
 package com.example.medico.ui.treatment
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -36,7 +38,9 @@ class TreatmentFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val idPatient=1
+        val preferences: SharedPreferences = requireActivity().getSharedPreferences("MY_APP", Context.MODE_PRIVATE)
+        val idPatient=preferences.getInt("IDUSER",0)
+        println("id patient"+idPatient)
         val call = RetrofitService.treatmentApi.getTraitementByUser(idPatient )
         call.enqueue(object: Callback<MutableList<TraitementResponse>> {
             override fun onFailure(call: Call<MutableList<TraitementResponse>>, t: Throwable) {

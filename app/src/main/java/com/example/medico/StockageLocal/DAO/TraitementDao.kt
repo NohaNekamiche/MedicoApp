@@ -1,12 +1,13 @@
 package com.example.medico.StockageLocal.DAO
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Update
 import com.example.medico.StockageLocal.Entity.Traitement
 import retrofit2.http.Query
 import java.util.*
-
+@Dao
 interface TraitementDao {
     @Insert
     fun addTreatment(traitement: Traitement)
