@@ -1,6 +1,9 @@
-package com.example.medico.dataClass
+package com.example.medico.DataClass
 
-class Conseil ( val date:String,
-                val heure:String,
-                val doc:String,
-                val obj:String)
+
+data class Conseil (
+    val idconseil:Int,
+    val obj:String,
+    val IdDoc:Int,
+    val IdPatient:Int,
+    val msg:String,val reponse:String)

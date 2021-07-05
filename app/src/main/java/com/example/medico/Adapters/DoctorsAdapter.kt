@@ -12,7 +12,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.medico.dataClass.Doctor
+import com.example.medico.DataClass.Doctor
 import com.example.medico.R
 
 
@@ -30,15 +30,19 @@ class DoctorsAdapter(val context: Context, var data:List<Doctor>): RecyclerView.
         val lang=data[position].langCabinet
         holder.location.setOnClickListener {
             val url= Uri.parse("geo:$lat,$lang")
+
             val uri = Uri.parse("http://maps.google.com/maps?daddr="+lat+","+lang)
             val intent= Intent(Intent.ACTION_VIEW,uri)
+
             context.startActivity(intent)
         }
         holder.item.setOnClickListener { v->
             val doc="Dr "+data[position].name+" "+data[position].username
             val adr=data[position].adr
             val tel=data[position].phone
+
             val bundle= bundleOf("docname" to doc,"adr" to adr,"tel" to tel)
+
             v?.findNavController()?.navigate(R.id.nav_to_docdetail,bundle)
         }
         holder.phone_txt.setOnClickListener {

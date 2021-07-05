@@ -1,9 +1,8 @@
-package com.example.medico.dataClass
+package com.example.medico.DataClass
 
 data class Treatment (
             val idTraitement:Int,
-            val idBooking:Int,
-            val nom_doc:String,
+            val idbooking:Int,
             val maladie:String,
             val explication:String,
             val medicaments:String,

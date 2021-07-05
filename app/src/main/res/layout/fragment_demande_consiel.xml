@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/round"
+    >
 
     <TextView
         android:id="@+id/title"
@@ -49,7 +51,7 @@
     </EditText>
 
     <EditText
-        android:id="@+id/msg2"
+        android:id="@+id/obj"
         android:layout_width="302dp"
         android:layout_height="50dp"
         android:layout_marginTop="196dp"

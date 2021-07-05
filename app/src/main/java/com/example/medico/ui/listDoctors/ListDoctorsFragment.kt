@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.medico.Adapters.DoctorsAdapter
-import com.example.medico.dataClass.Doctor
+import com.example.medico.DataClass.Doctor
 import com.example.medico.R
 import com.example.medico.Retrofit.RetrofitService
 import kotlinx.android.synthetic.main.fragment_list_doctors.*
@@ -39,6 +39,7 @@ class ListDoctorsFragment : Fragment() {
           //  list_docs.adapter = DoctorsAdapter(requireActivity(),loadData())
         val spec=arguments?.getString("spec")
         if (spec != null) {
+
             spec_doc.text=spec
             getDoctorsByspeciality(spec)
         }

@@ -1,10 +1,11 @@
-package com.example.medico.dataClass
+package com.example.medico.DataClass
 
-class Rdv (
+
+data class Rdv (
     val idbooking:Int,
-    val idUser:Int,
+    val IdDoc:Int,
+    val IdPatient:Int,
     val date:String,
     val heure:String,
-    val obj:String,
     val Titre:String
 )

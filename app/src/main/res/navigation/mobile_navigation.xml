@@ -55,7 +55,12 @@
         android:id="@+id/treatmentDetailFragment"
         android:name="com.example.medico.ui.treatment.TreatmentDetailFragment"
         android:label="fragment_treatment_detail"
-        tools:layout="@layout/fragment_treatment_detail" />
+        tools:layout="@layout/fragment_treatment_detail" >
+        <action
+            android:id="@+id/nav_to_demande_conseil"
+            app:destination="@+id/navigation_aide"
+            />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
@@ -63,11 +68,16 @@
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_rdv" />
     <fragment
-        android:id="@+id/navigation_aide"
+        android:id="@+id/aide"
         android:name="com.example.medico.ui.rdvs.RdvsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications"
         />
 
-
+<fragment
+    android:id="@+id/navigation_aide"
+    android:name="com.example.medico.ui.DemandeConseil.DemandeConseilFragment"
+    android:label="demande conseil"
+    tools:layout="@layout/fragment_demande_consiel"
+    />
 </navigation>

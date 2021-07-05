@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.medico.dataClass.Reponse
+import com.example.medico.DataClass.Reponse
 import com.example.medico.R
 
 class ReponseAdapter(val context: Context, var data:List<Reponse>): RecyclerView.Adapter<MyRepHolder>() {

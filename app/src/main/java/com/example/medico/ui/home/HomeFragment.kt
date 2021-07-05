@@ -49,7 +49,9 @@ class HomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         generaliste.setOnClickListener {it->
+
             val bundle=  bundleOf("spec" to "Generaliste")
+
             it?.findNavController()?.navigate(R.id.nav_to_list_doc,bundle)
         }
         dentiste.setOnClickListener {

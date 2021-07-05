@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.medico.dataClass.Conseil
 import com.example.medico.R
 
 class ConseilAdapter(val context: Context, var data:List<Conseil>): RecyclerView.Adapter<MyConseilHolder>() {
@@ -16,10 +15,10 @@ class ConseilAdapter(val context: Context, var data:List<Conseil>): RecyclerView
 
     override fun getItemCount()=data.size
     override fun onBindViewHolder(holder: MyConseilHolder, position: Int) {
-        holder.doc_name.text=data[position].doc
+  /*      holder.doc_name.text=data[position].doc
         holder.obj.text=data[position].obj
         holder.heure.text=data[position].heure
-        holder.date.text=data[position].date
+        holder.date.text=data[position].date*/
     }
 
 }

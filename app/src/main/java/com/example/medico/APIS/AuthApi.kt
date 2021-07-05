@@ -1,7 +1,7 @@
-package com.example.medico.APIs
+package com.example.medico.APIS
 
-import com.example.medico.dataClass.Auth
-import com.example.medico.dataClass.AuthResponse
+import com.example.medico.DataClass.Auth
+import com.example.medico.DataClass.AuthResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST

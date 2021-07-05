@@ -1,4 +1,4 @@
-package com.example.medico.dataClass
+package com.example.medico.DataClass
 
 data class User(
         val nom:String,

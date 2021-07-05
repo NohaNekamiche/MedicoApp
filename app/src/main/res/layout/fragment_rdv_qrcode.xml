@@ -25,6 +25,7 @@
         android:layout_width="160dp"
         android:layout_height="49dp"
         android:layout_marginTop="475dp"
+
         android:text="@string/save"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +63,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_marginTop="25dp">
+
 
             <TextView
                 android:layout_width="wrap_content"

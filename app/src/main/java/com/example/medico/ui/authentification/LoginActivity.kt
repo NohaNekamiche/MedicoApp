@@ -5,16 +5,14 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import com.example.medico.MainActivity
 
 import com.example.medico.R
 import com.example.medico.Retrofit.RetrofitService
-import com.example.medico.dataClass.Auth
-import com.example.medico.dataClass.AuthResponse
+import com.example.medico.DataClass.Auth
+import com.example.medico.DataClass.AuthResponse
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -49,9 +47,7 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(applicationContext,"phone : $phone",Toast.LENGTH_SHORT).show()
 
             val auth = Auth(phone, pwd)
-           login(auth)
-           // startActivity(Intent(this@LoginActivity,MainActivity::class.java))
-
+            login(auth)
 
         }
     }
@@ -76,11 +72,16 @@ class LoginActivity : AppCompatActivity() {
                     Log.d("push",response.body().toString())
                     Log.d("the token ", response.body()?.token.toString())
                     val token = response.body()?.token
-                    if (token != null) {
+                    val idUser=response.body()?.idUser
+                    println("IDUSER "+idUser)
+                    if ((token != null)&&(idUser!=null)) {
                         startActivity(Intent(this@LoginActivity,MainActivity::class.java))
                         val preferences: SharedPreferences = getSharedPreferences("LoggedIn", Context.MODE_PRIVATE)
                         preferences.edit().putBoolean("LoggedIn", true).apply()
-                        saveUserToken(token)
+                        saveUserToken(token,idUser)
+                    } else {
+                        Toast.makeText(applicationContext,"Erreur s'est produite, veuillez réessayer",Toast.LENGTH_SHORT).show()
+
                     }
 
                 }
@@ -89,9 +90,10 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    private fun saveUserToken(token: String){
+    private fun saveUserToken(token: String,idUser:Int){
         val preferences: SharedPreferences = getSharedPreferences("MY_APP", Context.MODE_PRIVATE)
         preferences.edit().putString("TOKEN", token).apply()
+        preferences.edit().putInt("IDUSER", idUser).apply()
         /// Retrive Saved TOKEN
         //val retrivedToken = preferences.getString("TOKEN", null) //second parameter default value.
     }

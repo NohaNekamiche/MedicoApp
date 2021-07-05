@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.medico.dataClass.Rdv
+import com.example.medico.DataClass.Rdv
 import com.example.medico.R
 
 class RdvAdapter (val context: Context, var data:List<Rdv>): RecyclerView.Adapter<MyRdvHolder>() {
@@ -18,7 +18,7 @@ class RdvAdapter (val context: Context, var data:List<Rdv>): RecyclerView.Adapte
     override fun onBindViewHolder(holder: MyRdvHolder, position: Int) {
         holder.heure.text=data[position].date
         holder.date.text=data[position].heure
-        holder.obj.text=data[position].obj
+        holder.obj.text=data[position].Titre
 
     }
 

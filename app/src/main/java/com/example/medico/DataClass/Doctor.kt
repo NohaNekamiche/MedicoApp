@@ -1,7 +1,8 @@
-package com.example.medico.dataClass
+package com.example.medico.DataClass
+
 
 data class Doctor(
-        val idDoc:Int,
+        val IdDoc:Int,
         val specialite:String,
         val idUser:Int,
         val photo: String,
@@ -12,5 +13,4 @@ data class Doctor(
         val phone:String,
         val adr:String,
         val Role:String,
-        val pwd:String
-)
+        val pwd:String)
