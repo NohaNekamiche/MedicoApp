@@ -12,8 +12,11 @@ import androidx.cardview.widget.CardView
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.medico.DataClass.Doctor
 import com.example.medico.R
+import com.example.medico.Retrofit.BASE_URL
+import com.google.android.material.imageview.ShapeableImageView
 
 
 class DoctorsAdapter(val context: Context, var data:List<Doctor>): RecyclerView.Adapter<MyDocHolder>() {
@@ -23,6 +26,8 @@ class DoctorsAdapter(val context: Context, var data:List<Doctor>): RecyclerView.
 
     override fun getItemCount()=data.size
     override fun onBindViewHolder(holder: MyDocHolder, position: Int) {
+        val img_url=BASE_URL+data[position].photo
+        Glide.with(context).load(img_url).into(holder.img)
         holder.doc_name.text="Dr " +data[position].name+" "+data[position].username
         holder.phone.text=data[position].phone
         holder.lieu.text=data[position].adr
@@ -40,8 +45,8 @@ class DoctorsAdapter(val context: Context, var data:List<Doctor>): RecyclerView.
             val doc="Dr "+data[position].name+" "+data[position].username
             val adr=data[position].adr
             val tel=data[position].phone
-
-            val bundle= bundleOf("docname" to doc,"adr" to adr,"tel" to tel)
+            val id=data[position].IdDoc
+            val bundle= bundleOf("id" to id,"docname" to doc,"adr" to adr,"tel" to tel, "img" to img_url,"lat" to lat ,"lang" to lang)
 
             v?.findNavController()?.navigate(R.id.nav_to_docdetail,bundle)
         }
@@ -74,6 +79,7 @@ class MyDocHolder(view: View) : RecyclerView.ViewHolder(view) {
     val item=view .findViewById<CardView>(R.id.item_doc)
     val  phone_txt=view.findViewById<TextView>(R.id.phone_num)
     val phone_img=view.findViewById<ImageView>(R.id.phone)
+    val img=view.findViewById<ShapeableImageView>(R.id.img)
 
 
 

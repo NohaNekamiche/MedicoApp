@@ -1,5 +1,7 @@
 package com.example.medico.ui.rdvs
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -125,7 +127,10 @@ class RdvsFragment : Fragment() {
     }
 */
     private fun getRdvs(){
-        val call=RetrofitService.bookingApi.getAllBooking()
+        val preferences: SharedPreferences = requireActivity().getSharedPreferences("MY_APP", Context.MODE_PRIVATE)
+        val idPatient=preferences.getInt("IDUSER",0)
+        Log.d("idPatient",idPatient.toString())
+        val call=RetrofitService.bookingApi.getBookingByIdPatient(idPatient)
         call.enqueue(object : Callback<MutableList<Rdv>> {
             override fun onFailure(call: Call<MutableList<Rdv>>, t: Throwable) {
                 Toast.makeText(context,"can't get doctors", Toast.LENGTH_LONG).show()
