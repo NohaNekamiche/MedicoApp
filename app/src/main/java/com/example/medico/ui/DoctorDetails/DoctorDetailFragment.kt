@@ -155,7 +155,7 @@ class DoctorDetailFragment : Fragment() {
 
 
         confirm.setOnClickListener {v->
-            val rdv_info=doc+date_choisi+"1"
+            val rdv_info=doc+date_choisi+hour+"1"
             //val rdv_info="nohanekamiche"
             val bundle= bundleOf("rdv" to rdv_info,"doc" to doc,"date" to date.text.toString() , "heure" to hour,
                     "idDoc" to id)

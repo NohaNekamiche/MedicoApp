@@ -45,7 +45,7 @@
 <fragment
         android:id="@+id/navigation_treatment"
         android:name="com.example.medico.ui.treatment.TreatmentFragment"
-        android:label="fragment_treatment"
+        android:label="Mes traitements"
         tools:layout="@layout/fragment_treatment" >
         <action
             android:id="@+id/action_navigation_treatment_to_treatmentDetailFragment"
@@ -65,14 +65,22 @@
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.medico.ui.rdvs.RdvsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_rdv" />
+        android:label="Mes rendez-vous"
+        tools:layout="@layout/fragment_rdv" >
+
+        <action
+            android:id="@+id/nav_to_rdv_detail"
+            app:destination="@+id/navigation_rdv_detail"
+            />
+    </fragment>
     <fragment
         android:id="@+id/aide"
         android:name="com.example.medico.ui.rdvs.RdvsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications"
-        />
+        >
+
+    </fragment>
 
 <fragment
     android:id="@+id/navigation_aide"
@@ -96,4 +104,12 @@
             android:id="@+id/navigate_to_conseildetail"
             app:destination="@+id/conseildetail"/>
     </fragment>
+
+
+
+    <fragment
+        android:id="@+id/navigation_rdv_detail"
+        android:name="com.example.medico.ui.rdvs.RdvDetailFragment"
+        tools:layout="@layout/fragment_booking_detail"
+        />
 </navigation>

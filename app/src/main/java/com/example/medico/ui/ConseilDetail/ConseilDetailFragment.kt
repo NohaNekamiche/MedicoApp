@@ -10,6 +10,7 @@ import com.example.medico.DataClass.DocEmploi
 import com.example.medico.DataClass.Heure
 import com.example.medico.R
 import com.example.medico.ui.DoctorDetails.DoctorDetailViewModel
+import kotlinx.android.synthetic.main.fragment_conseil_detail.*
 
 class ConseilDetailFragment:Fragment() {
     private lateinit var conseilDetailViewModel: ConseilDetailViewModel
@@ -32,6 +33,12 @@ class ConseilDetailFragment:Fragment() {
         val doc=arguments?.getString("doc")
         val obj=arguments?.getString("obj")
         val msg=arguments?.getString("msg")
+
+        doc_name.setText(doc)
+        msg_val.setText(msg)
+        rep_val.setText(rep)
+        obj_val.setText(obj)
+
 
 
     }

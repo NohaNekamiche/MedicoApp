@@ -8,7 +8,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/treatment_item"
-        android:layout_width="380dp"
+        android:layout_width="360dp"
         android:layout_height="120dp"
         app:cardBackgroundColor="@color/green_list"
         app:cardCornerRadius="20dp"
@@ -53,7 +53,7 @@
             android:id="@+id/duree_trt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="190dp"
+            android:layout_marginLeft="210dp"
             android:layout_marginTop="43dp"
             android:text="TextView"
             android:textColor="@color/red"

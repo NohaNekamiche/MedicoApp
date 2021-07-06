@@ -13,7 +13,7 @@ interface BookingApi {
     fun getAllBooking(): Call<MutableList<Rdv>>
 
     @POST("booking/addBooking")
-    fun addBooking(@Body rdv: Rdv):Call<MutableList<BookingReponse>>
+    fun addBooking(@Body rdv: Rdv):Call<BookingReponse>
     @GET("booking/getBookingByIdPatient/{id}")
     fun getBookingByIdPatient(@Path("id")id:Int):Call<MutableList<Rdv>>
 }

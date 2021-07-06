@@ -1,6 +1,6 @@
 package com.example.medico.DataClass
 
 data class BookingReponse (
-        val booking: Rdv,
-        val msg:String
+        val msg:String,
+        val booking: Rdv
         )

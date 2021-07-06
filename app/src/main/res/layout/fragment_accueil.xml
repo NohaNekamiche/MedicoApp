@@ -7,32 +7,22 @@
     android:layout_height="match_parent"
     android:background="@drawable/round">
 
-    <SearchView
-        android:layout_width="292dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/input"/>
-
     <androidx.cardview.widget.CardView
         android:id="@+id/generaliste"
-        app:cardBackgroundColor="@color/green"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="120dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/green"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
         app:cardMaxElevation="5dp"
-        android:orientation="vertical"
-
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -40,41 +30,44 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:src="@drawable/s1" />
+
         <TextView
             android:id="@+id/gen_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/generaliste"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"/>
+            android:layout_marginTop="80dp"
+            android:text="@string/generaliste"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/dentiste"
-        app:cardBackgroundColor="@color/green"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:layout_marginStart="190dp"
+        android:layout_marginStart="230dp"
         android:layout_marginTop="120dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/green"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
         app:cardMaxElevation="5dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dent"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"/>
+            android:layout_marginTop="80dp"
+            android:text="@string/dent"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,27 +78,29 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/babies"
-        app:cardBackgroundColor="@color/green"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:layout_marginStart="190dp"
+        android:layout_marginStart="230dp"
         android:layout_marginTop="270dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/green"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
         app:cardMaxElevation="5dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pediatre"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"/>
+            android:layout_marginTop="80dp"
+            android:text="@string/pediatre"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
         <ImageView
             android:layout_width="80dp"
             android:layout_height="60dp"
@@ -118,7 +113,7 @@
         android:id="@+id/neurologie"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="270dp"
         app:cardBackgroundColor="@color/green"
         app:cardCornerRadius="5dp"
@@ -127,16 +122,18 @@
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/neuro"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"/>
+            android:layout_marginTop="80dp"
+            android:text="@string/neuro"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -149,8 +146,8 @@
         android:id="@+id/eye"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="420dp"
         app:cardBackgroundColor="@color/green"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
@@ -158,30 +155,32 @@
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:src="@drawable/s3" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ophtal"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"/>
+            android:layout_marginTop="80dp"
+            android:text="@string/ophtal"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/heart"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="420dp"
         app:cardBackgroundColor="@color/green"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
@@ -189,21 +188,53 @@
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:src="@drawable/s4" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cardio"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"/>
+            android:layout_marginTop="80dp"
+            android:text="@string/cardio"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="55dp"
+        android:text="Choisissez une spécialité"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/generaliste"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <ImageButton
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_exit_to_app_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

@@ -5,6 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medico.DataClass.Rdv
 import com.example.medico.R
@@ -19,6 +23,15 @@ class RdvAdapter (val context: Context, var data:List<Rdv>): RecyclerView.Adapte
         holder.heure.text=data[position].date
         holder.date.text=data[position].heure
         holder.obj.text=data[position].Titre
+        holder.rdv_item.setOnClickListener {v->
+            val d=data[position].date
+            val t=data[position].heure
+            val doc="Dr Noha Nekamiche"
+            val id=data[position].IdPatient
+            val bundle= bundleOf("date" to d,"heure" to t,"doc" to doc,"idPatient" to id)
+
+            v?.findNavController()?.navigate(R.id.nav_to_rdv_detail,bundle)
+        }
 
     }
 
@@ -28,6 +41,7 @@ class MyRdvHolder(view: View) : RecyclerView.ViewHolder(view) {
     val heure= view.findViewById<TextView>(R.id.heure)
     val date= view.findViewById<TextView>(R.id.date)
     val obj= view.findViewById<TextView>(R.id.obj)
+    val rdv_item=view.findViewById<ConstraintLayout>(R.id.rdv_item)
 
 
 

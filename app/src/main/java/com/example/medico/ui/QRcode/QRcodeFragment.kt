@@ -47,6 +47,8 @@ class QRcodeFragment :Fragment(){
         val date=arguments?.getString("date")
         val heure=arguments?.getString("heure")
         val idDoc=arguments?.getInt("idDoc")
+        Log.d("Date11",date.toString())
+        Log.d("heure11",heure.toString())
         doc_name.setText(doc)
         date_v.setText(date)
         heure_v.setText(heure)
@@ -68,19 +70,19 @@ class QRcodeFragment :Fragment(){
             val preferences: SharedPreferences = requireActivity().getSharedPreferences("MY_APP", Context.MODE_PRIVATE)
             val idPatient=preferences.getInt("IDUSER",0)
             Log.d("idPatient",idPatient.toString())
-            val booking= Rdv(1,idDoc!!,idPatient, date_v.text.toString(),time.text.toString(),"RDV-Dentiste")
-            val call= booking?.let { it1 -> RetrofitService.bookingApi.addBooking(it1) }
+            val booking= Rdv(0,idDoc!!,7, date!!,heure!!,"RDV-Dentiste")
+            val call=RetrofitService.bookingApi.addBooking(booking)
             if (call != null) {
-                call.enqueue(object : Callback<MutableList<BookingReponse>> {
-                    override fun onFailure(call: Call<MutableList<BookingReponse>>, t: Throwable) {
+                call.enqueue(object : Callback<BookingReponse> {
+                    override fun onFailure(call: Call<BookingReponse>, t: Throwable) {
                         Toast.makeText(context, "can't get doctors", Toast.LENGTH_LONG).show()
                         Log.d("error", t.toString())
                     }
                     override fun onResponse(
-                            call: Call<MutableList<BookingReponse>>,
-                            response: Response<MutableList<BookingReponse>>
+                            call: Call<BookingReponse>,
+                            response: Response<BookingReponse>
                     ) {
-
+                        Toast.makeText(context, "Votre rendez-vous est enregister correctement", Toast.LENGTH_LONG).show()
                     }
                 })
             }

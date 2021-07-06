@@ -1,16 +1,21 @@
 package com.example.medico.ui.home
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.medico.R
+import com.example.medico.ui.authentification.LoginActivity
 import kotlinx.android.synthetic.main.fragment_accueil.*
 
 class HomeFragment : Fragment() {
@@ -73,6 +78,24 @@ class HomeFragment : Fragment() {
         heart.setOnClickListener {
             val bundle = bundleOf("spec" to "Heart")
             it?.findNavController()?.navigate(R.id.nav_to_list_doc, bundle)
+        }
+
+        img.setOnClickListener {
+            val preferences: SharedPreferences = requireActivity().getSharedPreferences("LoggedIn", Context.MODE_PRIVATE)
+
+            preferences.edit().putBoolean("LoggedIn", false).apply()
+            var toMain = Intent(requireContext(), LoginActivity::class.java)
+            val loggedIn = preferences?.getBoolean("LoggedIn",false)
+            if(!loggedIn){
+                requireActivity().startActivity(toMain)
+                requireActivity().finish()
+
+            }else {
+
+                Toast.makeText(context,"Veuillez réessayer", Toast.LENGTH_SHORT).show()
+
+            }
+
         }
     }
 }

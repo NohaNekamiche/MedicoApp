@@ -130,7 +130,7 @@ class RdvsFragment : Fragment() {
         val preferences: SharedPreferences = requireActivity().getSharedPreferences("MY_APP", Context.MODE_PRIVATE)
         val idPatient=preferences.getInt("IDUSER",0)
         Log.d("idPatient",idPatient.toString())
-        val call=RetrofitService.bookingApi.getBookingByIdPatient(idPatient)
+        val call=RetrofitService.bookingApi.getBookingByIdPatient(7)
         call.enqueue(object : Callback<MutableList<Rdv>> {
             override fun onFailure(call: Call<MutableList<Rdv>>, t: Throwable) {
                 Toast.makeText(context,"can't get doctors", Toast.LENGTH_LONG).show()
