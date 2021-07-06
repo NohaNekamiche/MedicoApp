@@ -6,4 +6,5 @@ data class Conseil (
     val obj:String,
     val IdDoc:Int,
     val IdPatient:Int,
-    val msg:String,val reponse:String)
+    val msg:String,val reponse:String
+    )

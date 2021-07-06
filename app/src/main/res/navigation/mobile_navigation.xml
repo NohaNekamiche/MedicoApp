@@ -80,4 +80,20 @@
     android:label="demande conseil"
     tools:layout="@layout/fragment_demande_consiel"
     />
+    <fragment
+        android:id="@+id/conseildetail"
+        android:name="com.example.medico.ui.ConseilDetail.ConseilDetailFragment"
+        android:label="conseil detail"
+        tools:layout="@layout/fragment_conseil_detail"
+        />
+    <fragment
+        android:id="@+id/navigation_listconseil"
+        android:name="com.example.medico.ui.ListeConseil.ListeConseilFragment"
+        tools:layout="@layout/fragment_list_conseil"
+
+        >
+        <action
+            android:id="@+id/navigate_to_conseildetail"
+            app:destination="@+id/conseildetail"/>
+    </fragment>
 </navigation>

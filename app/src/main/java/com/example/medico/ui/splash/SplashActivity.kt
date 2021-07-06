@@ -35,6 +35,11 @@ class SplashActivity : AppCompatActivity() {
                         println("!first run")
                         val preferences: SharedPreferences = getSharedPreferences("LoggedIn", Context.MODE_PRIVATE)
                         val loggedIn =  preferences.getBoolean("LoggedIn",false)
+                        Log.d("LoggedIn",loggedIn.toString())
+                       // val preferences: SharedPreferences = this@SplashActivity.getSharedPreferences("MY_APP", Context.MODE_PRIVATE)
+                        val idPatient=preferences.getInt("IDUSER",0)
+
+                        Log.d("idPatient1",idPatient.toString())
                         var toMain = Intent(this@SplashActivity, LoginActivity::class.java)
                         if(loggedIn) toMain = Intent(this@SplashActivity, MainActivity::class.java)
 

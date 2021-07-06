@@ -77,5 +77,6 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="picker">Choisir une Date</string>
+    <string name="mes_conseil">Mes Conseils</string>
 
 </resources>

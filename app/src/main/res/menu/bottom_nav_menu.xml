@@ -17,7 +17,7 @@
         android:icon="@drawable/ic_baseline_event_available_24"
         android:title="rendez-vous" />
     <item
-        android:id="@+id/navigation_aide"
+        android:id="@+id/navigation_listconseil"
         android:icon="@drawable/ic_baseline_forum_24"
 
         android:title="Conseils" />
