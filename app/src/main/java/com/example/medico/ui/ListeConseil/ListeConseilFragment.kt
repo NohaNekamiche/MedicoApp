@@ -1,5 +1,7 @@
 package com.example.medico.ui.ListeConseil
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -39,8 +41,10 @@ class ListeConseilFragment:Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        val call=RetrofitService.sendDemande.getConseilByPatient(7)
+        val preferences: SharedPreferences = requireActivity().getSharedPreferences("MY_APP", Context.MODE_PRIVATE)
+        val idPatient=preferences.getInt("IDUSER",0)
+        Log.d("idPatient",idPatient.toString())
+        val call=RetrofitService.sendDemande.getConseilByPatient(idPatient)
         call.enqueue(object : Callback<MutableList<ConseilResponse>> {
             override fun onFailure(call: Call<MutableList<ConseilResponse>>, t: Throwable) {
                 Toast.makeText(context,"can't get doctors", Toast.LENGTH_LONG).show()

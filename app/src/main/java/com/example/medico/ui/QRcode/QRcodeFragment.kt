@@ -82,10 +82,35 @@ class QRcodeFragment :Fragment(){
                             call: Call<BookingReponse>,
                             response: Response<BookingReponse>
                     ) {
+                        Log.d("iddoc",idDoc.toString())
+                        Log.d("date",date)
+                        Log.d("heure",heure)
+                        Toast.makeText(context, date +" h :" +heure, Toast.LENGTH_LONG).show()
                         Toast.makeText(context, "Votre rendez-vous est enregister correctement", Toast.LENGTH_LONG).show()
+                        delate(idDoc,date,heure)
                     }
                 })
             }
         }
     }
+
+
+    private fun delate(id:Int,date:String,heure:String){
+        val call=RetrofitService.emploiApi.deleteSeance(id,date,heure)
+        call.enqueue(object : Callback<String> {
+            override fun onFailure(call: Call<String>, t: Throwable) {
+             //   Toast.makeText(context, "can't get doctors", Toast.LENGTH_LONG).show()
+                Log.d("error", t.toString())
+            }
+            override fun onResponse(
+                call: Call<String>,
+                response: Response<String>
+            ) {
+                //Toast.makeText(context, "Votre rendez-vous est enregister correctement", Toast.LENGTH_LONG).show()
+                Log.d("delate", response.body().toString())
+            }
+        })
+
+    }
 }
+

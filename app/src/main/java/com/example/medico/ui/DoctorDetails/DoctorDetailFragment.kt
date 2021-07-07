@@ -1,7 +1,9 @@
 package com.example.medico.ui.DoctorDetails
 
 import android.app.DatePickerDialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -155,7 +157,9 @@ class DoctorDetailFragment : Fragment() {
 
 
         confirm.setOnClickListener {v->
-            val rdv_info=doc+date_choisi+hour+"1"
+            val preferences: SharedPreferences = requireActivity().getSharedPreferences("MY_APP", Context.MODE_PRIVATE)
+            val idPatient=preferences.getInt("IDUSER",0)
+            val rdv_info=doc+" "+date_choisi+" "+hour+" "+idPatient.toString()
             //val rdv_info="nohanekamiche"
             val bundle= bundleOf("rdv" to rdv_info,"doc" to doc,"date" to date.text.toString() , "heure" to hour,
                     "idDoc" to id)

@@ -98,6 +98,7 @@
         android:id="@+id/navigation_listconseil"
         android:name="com.example.medico.ui.ListeConseil.ListeConseilFragment"
         tools:layout="@layout/fragment_list_conseil"
+        android:label="Mes Conseils"
 
         >
         <action

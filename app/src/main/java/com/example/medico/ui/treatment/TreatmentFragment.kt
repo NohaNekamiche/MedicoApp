@@ -43,6 +43,7 @@ class TreatmentFragment : Fragment() {
         val current=System.currentTimeMillis().let { Timestamp(it) }
 
         println("id patient"+idPatient)
+        Log.d("idpatient",idPatient.toString())
         val call = RetrofitService.treatmentApi.getTraitementByCurrentDate(idPatient,current)
         call.enqueue(object: Callback<MutableList<TraitementResponse>> {
             override fun onFailure(call: Call<MutableList<TraitementResponse>>, t: Throwable) {

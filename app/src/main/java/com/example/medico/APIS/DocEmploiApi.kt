@@ -11,8 +11,10 @@ import retrofit2.http.Path
 interface DocEmploiApi {
     @GET("doctoremploi/getEmploiByIdDoc/{id}")
     fun getEmploiByDoc(@Path("id")id:Int):Call<MutableList<DocEmploi>>
-    @DELETE("doctoremploi/deleteEmploiLibre")
-    fun deleteSeance(@Body docEmploi: DocEmploi):Call<String>
+    @DELETE("doctoremploi/deleteEmploiLibre/{id}/{date}/{heure}")
+    fun deleteSeance(@Path("id")id:Int,
+                     @Path("date")date:String,
+                        @Path("heure")heure:String):Call<String>
     @GET("doctoremploi/getTimeByIdDocDate/{id}/{date}")
     fun getTimeByIdDocDate(@Path("id")id:Int,
                            @Path("date")date:String):Call<MutableList<Heure>>

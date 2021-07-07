@@ -1,6 +1,7 @@
 package com.example.medico.Adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,9 +12,10 @@ import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medico.DataClass.Rdv
+import com.example.medico.DataClass.RdvReponse
 import com.example.medico.R
 
-class RdvAdapter (val context: Context, var data:List<Rdv>): RecyclerView.Adapter<MyRdvHolder>() {
+class RdvAdapter (val context: Context, var data:List<RdvReponse>): RecyclerView.Adapter<MyRdvHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyRdvHolder {
         return MyRdvHolder(LayoutInflater.from(context).inflate(R.layout.rdv_elt, parent, false))
     }
@@ -26,7 +28,9 @@ class RdvAdapter (val context: Context, var data:List<Rdv>): RecyclerView.Adapte
         holder.rdv_item.setOnClickListener {v->
             val d=data[position].date
             val t=data[position].heure
-            val doc="Dr Noha Nekamiche"
+            Log.d("datrdv",d)
+            Log.d("datrdv",t)
+            val doc="Dr " +data[position].name+" "+data[position].username
             val id=data[position].IdPatient
             val bundle= bundleOf("date" to d,"heure" to t,"doc" to doc,"idPatient" to id)
 

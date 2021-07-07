@@ -35,7 +35,7 @@ class RdvDetailFragment:Fragment() {
         val date=arguments?.getString("date")
         val heure=arguments?.getString("heure")
         val idPatient=arguments?.getInt("idPatient")
-        val qr_info=doc+date+heure+idPatient.toString()
+        val qr_info=doc+" "+date+" "+heure+" "+idPatient.toString()
         val multiFormatWriter = MultiFormatWriter()
         try {
             val bitMatrix: BitMatrix =
@@ -48,6 +48,9 @@ class RdvDetailFragment:Fragment() {
             e.printStackTrace()
         }
 
+        doc_name.setText(doc)
+        date_v.setText(date)
+        heure_v.setText(heure)
 
     }
 

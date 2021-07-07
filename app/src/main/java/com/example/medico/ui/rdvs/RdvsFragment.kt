@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.medico.Adapters.RdvAdapter
 import com.example.medico.DataClass.Rdv
+import com.example.medico.DataClass.RdvReponse
 import com.example.medico.R
 import com.example.medico.Retrofit.RetrofitService
 import kotlinx.android.synthetic.main.fragment_rdv.*
@@ -130,16 +131,16 @@ class RdvsFragment : Fragment() {
         val preferences: SharedPreferences = requireActivity().getSharedPreferences("MY_APP", Context.MODE_PRIVATE)
         val idPatient=preferences.getInt("IDUSER",0)
         Log.d("idPatient",idPatient.toString())
-        val call=RetrofitService.bookingApi.getBookingByIdPatient(7)
-        call.enqueue(object : Callback<MutableList<Rdv>> {
-            override fun onFailure(call: Call<MutableList<Rdv>>, t: Throwable) {
+        val call=RetrofitService.bookingApi.getBookingByIdPatientIdDoc(idPatient)
+        call.enqueue(object : Callback<MutableList<RdvReponse>> {
+            override fun onFailure(call: Call<MutableList<RdvReponse>>, t: Throwable) {
                 Toast.makeText(context,"can't get doctors", Toast.LENGTH_LONG).show()
                 Log.d("error",t.toString())
             }
 
             override fun onResponse(
-                call: Call<MutableList<Rdv>>,
-                response: Response<MutableList<Rdv>>
+                call: Call<MutableList<RdvReponse>>,
+                response: Response<MutableList<RdvReponse>>
             ) {
                 if(response.isSuccessful){
                     val data=response.body()

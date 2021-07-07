@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
+import com.bumptech.glide.Glide
 import com.example.medico.R
 import kotlinx.android.synthetic.main.fragment_treatment_detail.*
 
@@ -40,25 +41,32 @@ class TreatmentDetailFragment : Fragment() {
         val titre = arguments?.getString("titre").toString()
         val explication = arguments?.getString("explication").toString()
         val medicaments = arguments?.getString("medicaments").toString()
-        val date = arguments?.getString("date")?.subSequence(0,10)
-        val idDoc = arguments?.getInt("idDoc")
-        val lat= arguments?.getString("lat").toString()
-        val lang= arguments?.getString("lang").toString()
+        val date = arguments?.getString("date")
+        val doc = arguments?.getString("doc")
+        val tel= arguments?.getString("tel")
+        val adr= arguments?.getString("adr")
+        val img= arguments?.getString("img")
+        val lat= arguments?.getString("lat")
+        val lang= arguments?.getString("lang")
+        val id=arguments?.getInt("idDoc")
 
         doc_phone.setOnClickListener {
-            val uri = Uri.parse("tel:0553322126")
-            val intent = Intent(Intent.ACTION_CALL, uri)
-
-            if (context?.packageManager?.let { it1 -> intent.resolveActivity(it1) } != null) {
-                requireActivity().startActivity(intent)
-            }
+            val uri = Uri.parse("tel:" +tel)
+            val dialIntent = Intent(Intent.ACTION_DIAL)
+            dialIntent.data = uri
+            requireActivity().startActivity(dialIntent)
         }
-
-
+        doc_name.setText(doc)
+        Glide.with(requireActivity()).load(img).into(imageView7)
+        doc_phone.setText(tel)
+        doc_pos.setText(adr)
         doc_pos.setOnClickListener{ view->
-            val url=Uri.parse("geo:36.7598942,3.0120671")
-            val intent= Intent(Intent.ACTION_VIEW,url)
-            context?.startActivity(intent)
+            val url= Uri.parse("geo:$lat,$lang")
+
+            val uri = Uri.parse("http://maps.google.com/maps?daddr="+lat+","+lang)
+            val intent= Intent(Intent.ACTION_VIEW,uri)
+
+            requireActivity().startActivity(intent)
         }
         Log.d("titre", titre)
         nom_trt.text=titre
@@ -67,7 +75,7 @@ class TreatmentDetailFragment : Fragment() {
         medicamentstxt.text=medicaments
         val name_doc="Noha Nekamiche"
         demande.setOnClickListener { v->
-            val bundle= bundleOf("iddoc" to idDoc,"nom" to name_doc )
+            val bundle= bundleOf("iddoc" to id,"nom" to name_doc )
             v.findNavController().navigate(R.id.nav_to_demande_conseil,bundle)
         }
 
